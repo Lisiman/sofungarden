@@ -1,0 +1,35 @@
+/**
+ * Cascade
+ */
+:root {
+   --paper: var(--black);
+   --ink: var(--white);
+}
+
+.block-info { font-size: 1.714rem; }
+
+.block-info p { max-width: 45ch; }
+
+
+
+/* Video device */
+.video_device .device--screen {
+    padding: 0 !important; /* Enables the video to stretch over the full height
+                              in Safari, too. */
+    overflow: hidden;
+}
+
+.video_device .device--controls { z-index: 2; }
+
+
+
+/* Werk Chow Chow */
+#werk_chow_chow {
+   max-width: 20vmin;
+   border-radius: 50%;
+   background-color: var(--neon_blue);
+   transform: matrix(0.866025, -0.5, 0.5, 0.866025, 0, 0);
+   z-index: 9979;
+}
+
+#werk_chow_chow svg { padding: calc(var(--min_space) / 4); }

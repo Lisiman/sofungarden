@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="112px" height="143px" viewBox="0 0 112 143" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Stroke 23</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="163.601446%" gradientTransform="translate(0.500000,0.000000),scale(1.000000,0.733871),rotate(90.000000),translate(-0.500000,-0.000000)" id="radialGradient-1">
+            <stop stop-color="#8176AD" offset="0%"></stop>
+            <stop stop-color="#35AB8D" offset="58.6122255%"></stop>
+            <stop stop-color="#3232D4" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="black-copy-17" transform="translate(-1311.000000, -547.000000)" stroke="url(#radialGradient-1)" stroke-width="20">
+            <path d="M1401.00511,587.120353 C1400.90063,584.322789 1400.40503,581.436882 1399.44867,578.492078 C1395.85092,567.427648 1386.12922,559.101886 1374.61802,557.367129 C1355.18801,554.441065 1338.47708,569.39799 1338.47708,588.252764 C1338.47708,589.077309 1338.50922,589.891145 1338.57352,590.696951 C1339.16287,598.131241 1337.5609,605.53876 1333.66043,611.896859 C1328.42052,620.444821 1325.92379,630.845331 1327.43736,641.915115 C1330.22073,662.244968 1346.84594,678.422648 1367.25106,680.706209 C1394.73114,683.776836 1418,662.370792 1418,635.530246 C1418,625.121704 1414.48797,615.548415 1408.59173,607.894603 C1403.9626,601.884527 1401.28639,594.699206 1401.00511,587.120353 Z" id="Stroke-23" transform="translate(1372.500000, 619.000000) rotate(20.000000) translate(-1372.500000, -619.000000) "></path>
+        </g>
+    </g>
+</svg>

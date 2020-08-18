@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="173px" height="172px" viewBox="0 0 173 172" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Stroke 17</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF6464" offset="0%"></stop>
+            <stop stop-color="#E7A8FF" offset="50.4091005%"></stop>
+            <stop stop-color="#00FFB5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="black-copy-15" transform="translate(-251.000000, -2042.000000)" fill="url(#linearGradient-1)">
+            <path d="M424,2127.99614 C424,2175.49392 385.276073,2214 337.5,2214 C289.723927,2214 251,2175.49392 251,2127.99614 C251,2080.50608 289.723927,2042 337.5,2042 C385.276073,2042 424,2080.50608 424,2127.99614 Z" id="Stroke-17"></path>
+        </g>
+    </g>
+</svg>

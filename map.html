@@ -1,0 +1,636 @@
+<!doctype html>
+<!-- all the cursor edit in cascade.css -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Real Fun Garden 2020 +++">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="author" content="Code by Siman Li 2020">
+  <title> 🐲真趣园 ｜ Map </title>
+  <link href="css/index.css" rel="stylesheet">
+  <link href="css/panic.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0 0.714rem"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    .info {
+      color: red;
+    }
+
+    :root {
+      --marquee--font_size: 1rem;
+      --marquee--line_height: 1.75;
+      --marquee--height: calc(var(--marquee--font_size) * var(--marquee--line_height));
+    }
+
+    .marquee--wrapper {
+      position: relative;
+      width: 100%;
+      min-height: var(--marquee--height);
+      height: var(--marquee--height);
+      font-family: var(--font_family--sans_serif);
+      font-size: var(--marquee--font_size);
+      line-height: var(--marquee--line_height);
+      color: #1700FF;
+      background-color: var(--ink);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.07), 0 0 4px rgba(0, 0, 0, 0.07), 0 0 8px rgba(0, 0, 0, 0.07), 0 0 16px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      z-index: 9980;
+    }
+
+    .marquee {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-top: 0em;
+      margin-top: -0.1em;
+      padding-left: 0.25em;
+      white-space: nowrap;
+    }
+
+    .marquee--wrapper.fixed {
+      position: fixed;
+      left: 0;
+    }
+
+    .marquee--wrapper.fixed:first-of-type {
+      top: 0;
+      background-color: #FFB7BC;
+      border-bottom: 4px solid #1700FF;
+    }
+
+    .marquee--wrapper.fixed:last-of-type {
+      bottom: 0;
+      background-color: #FFB7BC;
+      border-top: 4px solid #1700FF;
+    }
+
+    .marquee--wrapper.fixed+header,
+    .marquee--wrapper.fixed+main {
+      margin-top: var(--marquee--height);
+    }
+
+    .marquee--wrapper.fixed~footer {
+      margin-bottom: var(--marquee--height);
+    }
+
+    body {
+      height: 2700px;
+      background-color: green;
+      background-image: url("img/map_background.png");
+    }
+
+    .color_c_con {
+      position: absolute;
+      top: 16%;
+      left: 10%;
+      z-index: -1;
+      height: 100%;
+      min-width: 20%;
+      max-width: 30%;
+      margin: 0 auto;
+    }
+
+    .hulu_con {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      top: 70px;
+      z-index: 1;
+      height: 100%;
+      min-width: 5%;
+      max-width: 8%;
+      margin: 0 auto;
+      -webkit-animation: breathing 3s ease-out infinite normal;
+      animation: breathing 3s ease-out infinite normal;
+    }
+
+    @-webkit-keyframes breathing {
+      0% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      25% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+
+      60% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      100% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+    }
+
+    @keyframes breathing {
+      0% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      25% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+
+      60% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      100% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+    }
+
+    .print_con {
+      position: absolute;
+      top: 8%;
+      right: 18%;
+      min-width: 8%;
+      max-width: 13%;
+    }
+
+    .temple_con {
+      position: relative;
+      top: -150px;
+      margin-left: auto;
+      margin-right: auto;
+      min-width: 20%;
+      max-width: 30%;
+    }
+
+    .arvr_con {
+      position: absolute;
+      top: 80%;
+      left: 2%;
+      min-width: 40%;
+      max-width: 50%;
+    }
+
+    .av_con {
+      position: absolute;
+      top: 80%;
+      right: 3%;
+      min-width: 20%;
+      max-width: 30%;
+    }
+
+    .s_shape_con {
+      position: absolute;
+      top: 36%;
+      right: 1%;
+      min-width: 15%;
+      max-width: 25%;
+      /* filter: drop-shadow(0px 0px 2px #0FAC12); */
+    }
+
+    .douhao_con {
+      position: absolute;
+      top: 80%;
+      left: -10%;
+      min-width: 105%;
+      max-width: 130%;
+      z-index: -1;
+    }
+
+    .sphere2_con {
+      position: absolute;
+      top: 140%;
+      left: 20%;
+      min-width: 7%;
+      max-width: 9%;
+      z-index: 4;
+      -webkit-animation: spin 3s linear infinite;
+      -moz-animation: spin 3s linear infinite;
+      animation: spin 3s linear infinite;
+    }
+    .neoTemple_con {
+      position: absolute;
+      /* top: -220px; */
+      top: 160%;
+      left: 2%;
+      min-width: 50%;
+      max-width: 60%;
+    }
+
+    .buttom_con {
+      position: absolute;
+      top: 110%;
+      right: 16%;
+      min-width: 20%;
+      max-width: 28%;
+      z-index: -1;
+    }
+
+    .butt_con {
+      position: absolute;
+      top: 200%;
+      right: 16%;
+      min-width: 70%;
+      max-width: 80%;
+      z-index: -1;
+    }
+
+    .kedou_con {
+      position: absolute;
+      top: 240%;
+      left: 2%;
+      min-width: 20%;
+      max-width: 25%;
+      z-index: -1;
+      filter: drop-shadow(0px 0px 20px #D7D7D7);
+      -webkit-animation: breathing 2s ease-out infinite normal;
+      animation: breathing 2s ease-out infinite normal;
+    }
+
+    @-webkit-keyframes breathing {
+      0% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      25% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+
+      60% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      100% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+    }
+
+    @keyframes breathing {
+      0% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      25% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+
+      60% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      100% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+    }
+
+    /* text ring animations */
+    .text_ring_con {
+      position: absolute;
+      top: 28%;
+      left: 10%;
+      min-width: 10%;
+      max-width: 25%;
+      z-index: 3;
+      margin: -60px 0 0 -60px;
+      -webkit-animation: spin 4s linear infinite;
+      -moz-animation: spin 4s linear infinite;
+      animation: spin 4s linear infinite;
+    }
+
+    /* here is for the second text big ring */
+    .text_ring_con2 {
+      position: absolute;
+      /* top: 280%; */
+      top: 170%;
+      right: 10%;
+      z-index: -1;
+      min-width: 40%;
+      max-width: 55%;
+      margin: -60px 0 0 -60px;
+      -webkit-animation: spin 8s linear infinite;
+      -moz-animation: spin 8s linear infinite;
+      animation: spin 8s linear infinite;
+    }
+
+    @-moz-keyframes spin {
+      100% {
+        -moz-transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    /* zoom animation on the projects here */
+    .MapProject {
+      transition: transform .2s;
+    }
+
+    .MapProject:hover {
+      -ms-transform: scale(1.1);
+      /* IE 9 */
+      -webkit-transform: scale(1.1);
+      /* Safari 3-8 */
+      transform: scale(1.1);
+      filter: drop-shadow(0px 0px 10px #1700FF);
+    }
+
+    /* small hulu */
+    .hulu_s_con {
+      position: absolute;
+      top: 40%;
+      right: 26%;
+      margin-left: auto;
+      margin-right: auto;
+      min-width: 4%;
+      max-width: 7%;
+      z-index: -1;
+      -webkit-animation: spin 10s linear infinite;
+      -moz-animation: spin 10s linear infinite;
+      animation: spin 10s linear infinite;
+    }
+
+    @-moz-keyframes spin {
+      100% {
+        -moz-transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @media screen and (max-width: 1000px) {
+    }
+
+    .grad_sphere_con {
+      position: absolute;
+      /* top: 65%; */
+      bottom: 12%;
+      left: 32%;
+      min-width: 4%;
+      max-width: 6%;
+      z-index: 10;
+    }
+
+    .bubble_con {
+      position: absolute;
+      /* top: 65%; */
+      top: 48%;
+      right: 8%;
+      min-width: 4%;
+      max-width: 10%;
+      z-index: 4;
+    }
+
+    .flexContent {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100vh;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin: 0;
+      max-width: 100%;
+      width: 100vw;
+    }
+    .mapPopUp {
+      filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.4));
+    }
+    #arPop{
+      position: absolute;
+      /* position: relative; */
+      /* top:230px; */
+      top:230px;
+      /* top:60%; */
+      right:-6%;
+      min-width: 40%;
+      max-width: 60%;
+      z-index: 100;
+    }
+    #neoPop{
+      position: absolute;
+      top:1000px;
+      left:300px;
+      min-width: 35%;
+      max-width: 50%;
+      z-index: 100;
+    }
+    #avPop{
+      position: absolute;
+      top:600px;
+      right:100px;
+      min-width: 35%;
+      max-width: 50%;
+      z-index: 100;
+    }
+    #printPop{
+      position: absolute;
+      top:-600px;
+      right:0%;
+      min-width: 35%;
+      max-width: 50%;
+      z-index: 100;
+    }
+    #webPop{
+      position: absolute;
+      top:-250px;
+      left:0%;
+      min-width: 25%;
+      max-width: 45%;
+      z-index: 300;
+    }
+  </style>
+</head>
+<body>
+  <aside class="marquee--wrapper fixed" id="topMap">
+    <div class="marquee">SO FUN GARDEN MAP 真趣园地图 +++</div>
+  </aside>
+  <aside class="marquee--wrapper fixed" id="botMap">
+    <div class="marquee">SO FUN GARDEN MAP 真趣园地图 +++</div>
+  </aside>
+  <header class="minimal-back stack">
+    <a class="close" href="index.html" aria-label="Zurück zur Panic-Zone">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 250 250">
+        <polygon points="154.6,125 250,220.4 220.4,250 125,154.6 29.6,250 0,220.4 95.4,125 0,29.6 29.6,0 125,95.4 220.4,0 250,29.6 " /></svg>
+    </a>
+  </header>
+  <main class="stack">
+    <div class="color_c_con">
+      <img id="color_c" src="img/map/color_c.svg" alt="map_compoent">
+    </div>
+    <div class="hulu_con center">
+      <img id="hulu" src="img/map/hulu.svg" alt="map_compoent2"></div>
+      <!-- print project -->
+    <div class="print_con MapProject">
+      <img src="img/map/print.svg" alt="map_compoent3" onclick="showPrint()"></div>
+    <div class="temple_con MapProject">
+      <img id="temple" src="img/map/temple.svg" alt="map_compoent3" onclick="showWeb()"></div>
+    <!-- ar project -->
+    <div class="arvr_con MapProject">
+      <img src="img/map/arvr.svg" alt="map_compoent3" onclick="showAR()"></div>
+    <!-- av project -->
+    <div class="av_con MapProject">
+      <img src="img/map/av.svg" alt="map_compoent3" onclick="showAv()"></div>
+    <!-- douhao -->
+    <div class="douhao_con">
+      <img src="img/map/douhao.svg"></div>
+    <div class="sphere2_con">
+      <img src="img/map/sphere2.png"></div>
+    <div class="neoTemple_con MapProject">
+      <img src="img/map/neo_temple.svg" alt="map_compoent3" onclick="showNeo()"></div>
+    <!-- <article class="flexContent"> -->
+    <div class="grad_sphere_con rellax" data-rellax-speed="-3">
+      <img src="img/map/grad_sphere.svg" alt="map_compoent3">
+    </div>
+    <div class="bubble_con rellax" data-rellax-speed="-6">
+      <img id="bubble" src="img/map/bubble.svg" alt="map_compoent3"></div>
+    <!-- </article> -->
+    <!-- here are text rings -->
+    <div class="text_ring_con">
+      <img src="img/map/text_ring.png" alt="map_compoent4"></div>
+    <div class="text_ring_con2"> <img src="img/map/text_ring.png"></div>
+    <div class="hulu_s_con">
+      <img src="img/map/hulu_s.svg" alt="map_compoent5"></div>
+    <div class="s_shape_con">
+      <img src="img/map/s_shape.png" alt="map_compoent6"></div>
+    <div class="buttom_con">
+      <img src="img/map/buttom.svg"></div>
+    <div class="butt_con">
+      <img src="img/map/butt.svg"></div>
+    <div class="kedou_con">
+      <img src="img/map/kedou.svg"></div>
+    <!-- color ring -->
+
+ <!-- project pop ups -->
+<article class="mapPopUp">
+  <img src="img/map/pop/ar.svg" id="arPop" style="display:none;">
+  <img src="img/map/pop/neo_temple.svg" id="neoPop" style="display:none;">
+  <img src="img/map/pop/avPart.svg" id="avPop" style="display:none;">
+  <img src="img/map/pop/print.svg" id="printPop" style="display:none;">
+  <img src="img/map/pop/web.svg" id="webPop" style="display:none;">
+
+</article>
+  </main>
+  <script nonce="zoT1cpzZSPrcx4YTp2eYiIVzR+c=">
+    window.werkschau = {
+      "baseUrl": "https://werkschau.hs-augsburg.de/ws_19_20"
+    }
+  </script>
+  <!-- static js files always loaded -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- page specific vendor js files passed via vendorJS variable -->
+  <script src="js/displace.min.js"></script>
+  <!-- werkschau util -->
+  <script src="js/werkschau-util.js"></script>
+
+  <!-- index.js and autoloaded js determined by template name -->
+  <script src="js/index.js"></script>
+  <script src="js/panic.js"></script>
+  <script src="js/rellax.min.js"></script>
+  <script>
+    var rellax = new Rellax('.rellax');
+    //here is for zoom while scrolling
+    window.addEventListener('load', function() {
+      var box = document.getElementById('bubble'),
+        docHeight = document.documentElement.offsetHeight;
+
+      window.addEventListener('scroll', function() {
+        // normalize scroll position as percentage
+        var scrolled = window.scrollY / (docHeight - window.innerHeight) + 1,
+          transformValue = 'scale(' + scrolled + ')';
+        box.style.WebkitTransform = transformValue;
+        box.style.MozTransform = transformValue;
+        box.style.OTransform = transformValue;
+        box.style.transform = transformValue;
+      }, false);
+    }, false);
+  </script>
+  <!-- block js autoloaded by block detection -->
+  <script src="js/block-marquee.js"></script>
+  <script>
+    function showAR() {
+      var x = document.getElementById("arPop");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function showNeo() {
+      var x = document.getElementById("neoPop");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function showAv() {
+      var x = document.getElementById("avPop");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function showPrint() {
+      var x = document.getElementById("printPop");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function showWeb(){
+      var x = document.getElementById("webPop");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>

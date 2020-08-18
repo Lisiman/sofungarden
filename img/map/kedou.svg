@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="576px" height="485px" viewBox="0 0 576 485" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Stroke 31</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="21.6954502%" cy="24.5045637%" fx="21.6954502%" fy="24.5045637%" r="231.560801%" gradientTransform="translate(0.216955,0.245046),scale(0.842014,1.000000),rotate(11.284349),translate(-0.216955,-0.245046)" id="radialGradient-1">
+            <stop stop-color="#FF0000" offset="0%"></stop>
+            <stop stop-color="#9FFEAA" stop-opacity="0.774233351" offset="34.3710651%"></stop>
+            <stop stop-color="#73BD41" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="black-copy-15" transform="translate(-136.000000, -2493.000000)" fill="url(#radialGradient-1)">
+            <path d="M706.982228,2953.97264 C641.282431,2900.06312 527.509332,2797.48686 454.269525,2680.19794 C437.931561,2654.02979 419.899771,2630.55368 401.072686,2609.51758 C391.922968,2599.29547 384.88384,2587.3894 380.047069,2574.55925 C362.09175,2526.90442 316.041098,2493 262.052788,2493 C259.494843,2493 256.959839,2493.1031 254.436306,2493.25202 C251.59542,2492.75562 248.850122,2493.08401 246.345707,2494.00808 C180.183262,2502.22549 129.922898,2561.60692 136.594967,2631.28683 C142.349386,2691.36704 191.374748,2739.51064 251.614538,2744.35249 C276.84222,2746.38393 300.662841,2740.98076 321.130222,2730.10568 C343.004664,2718.48218 370.059996,2724.6796 384.287369,2744.94436 C396.45768,2762.28415 410.482405,2780.89168 427.260075,2801.34736 C511.412251,2903.95798 624.325054,2954.35831 694.219269,2977.26165 C708.416053,2981.91258 718.525479,2963.44251 706.982228,2953.97264 Z" id="Stroke-31" filter="url(#filter-2)"></path>
+        </g>
+    </g>
+</svg>

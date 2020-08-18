@@ -1,0 +1,6 @@
+ :root {
+   --black: #010101;
+   --white: #FFFFFF;
+    --ink: var(--black);
+   --paper: var(--white);
+}

@@ -1,0 +1,353 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Real Fun Garden 2020 +++">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="author" content="Siman Li 2020">
+  <title> 🐲真趣园 ｜ Gallery</title>
+  <link href="css/index.css" rel="stylesheet">
+  <link href="css/panic.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0 0.714rem"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    .galleryPic {
+      transition: 0.3s;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      /* padding-top: 100px; */
+      padding-top: 6%;
+
+      /* Location of the box */
+      left: 0;
+      top: -0.6%;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.9);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content,
+    #caption {
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+      from {
+        -webkit-transform: scale(0)
+      }
+
+      to {
+        -webkit-transform: scale(1)
+      }
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(0)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    /* The Close Button */
+    .picClose {
+      position: absolute;
+      top: 7%;
+      right: 15%;
+      color: #f1f1f1;
+      font-size: 80px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .picClose:hover,
+    .picClose:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 100%;
+      }
+    }
+
+    .row {
+      display: -ms-flexbox;
+      /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap;
+      /* IE10 */
+      flex-wrap: wrap;
+      padding: 0px 0px;
+    }
+
+    /* Create four equal columns that sits next to each other */
+    .column {
+      -ms-flex: 50%;
+      /* IE10 */
+      flex: 50%;
+      max-width: 50%;
+      padding: 0 10px;
+    }
+
+    .column img {
+      margin-top: 30px;
+      vertical-align: middle;
+      width: 100%;
+      padding: 10px 10px;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 800px) {
+      .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+
+    header #navigation--wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0;
+    }
+
+    header #main_navigation a {
+      margin-right: var(--min_space);
+      margin-bottom: 1rem;
+    }
+
+    header #social_navigation a+a {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+
+    .info {
+      color: red;
+    }
+
+    :root {
+      --marquee--font_size: 1rem;
+      --marquee--line_height: 1.75;
+      --marquee--height: calc(var(--marquee--font_size) * var(--marquee--line_height));
+    }
+
+    .marquee--wrapper {
+      position: relative;
+      width: 100%;
+      min-height: var(--marquee--height);
+      height: var(--marquee--height);
+      font-family: var(--font_family--sans_serif);
+      font-size: var(--marquee--font_size);
+      line-height: var(--marquee--line_height);
+      color: white;
+      background-color: var(--ink);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.07), 0 0 4px rgba(0, 0, 0, 0.07), 0 0 8px rgba(0, 0, 0, 0.07), 0 0 16px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      z-index: 9980;
+    }
+
+    .marquee {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-top: 0em;
+      margin-top: -0.1em;
+      padding-left: 0.25em;
+      white-space: nowrap;
+    }
+
+    .marquee--wrapper.fixed {
+      position: fixed;
+      left: 0;
+    }
+
+    .marquee--wrapper.fixed:first-of-type {
+      top: 0;
+      background-color: black;
+      border-bottom: 4px solid white;
+    }
+
+    .marquee--wrapper.fixed:last-of-type {
+      bottom: 0;
+      background-color: black;
+      border-top: 4px solid white;
+    }
+
+    .marquee--wrapper.fixed+header,
+    .marquee--wrapper.fixed+main {
+      margin-top: var(--marquee--height);
+    }
+
+    .marquee--wrapper.fixed~footer {
+      margin-bottom: var(--marquee--height);
+    }
+
+    body {
+      background-color: black;
+    }
+  </style>
+</head>
+
+
+<body>
+  <aside class="marquee--wrapper fixed" id="topMap">
+    <div class="marquee">SO FUN GARDEN GALLERY 真趣园画廊 +++</div>
+  </aside>
+  <aside class="marquee--wrapper fixed" id="botMap">
+    <div class="marquee">SO FUN GARDEN GALLERY 真趣园画廊 +++</div>
+  </aside>
+  <header class="minimal-back stack">
+    <a class="close" href="index.html" aria-label="Zurück zur Panic-Zone">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 250 250">
+        <polygon points="154.6,125 250,220.4 220.4,250 125,154.6 29.6,250 0,220.4 95.4,125 0,29.6 29.6,0 125,95.4 220.4,0 250,29.6 " /></svg>
+    </a>
+  </header>
+
+  <main class="stack">
+
+    <h1>真趣园画廊</h1>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="picClose">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+    <!-- Photo Grid -->
+    <article class="students_grid flex_row col_3"></article>
+    <div class="row">
+      <div class="column">
+        <img class="galleryPic" src="img/gallery/1.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/2.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/3.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/9.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/10.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/17.png" style="width:100%">
+        <img class="galleryPic" src="img/gallery/18.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/19.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/20.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/23.png" style="width:100%">
+        <img class="galleryPic" src="img/gallery/24.png" style="width:100%">
+        <img class="galleryPic" src="img/gallery/25.png" style="width:100%">
+      </div>
+      <div class="column">
+        <img class="galleryPic" src="img/gallery/4.png" style="width:100%">
+        <img class="galleryPic" src="img/gallery/5.png" style="width:100%">
+        <img class="galleryPic" src="img/gallery/6.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/7.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/8.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/13.jpeg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/11.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/12.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/13.jpeg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/14.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/15.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/16.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/21.jpg" style="width:100%">
+        <img class="galleryPic" src="img/gallery/22.png" style="width:100%">
+
+      </div>
+    </div>
+  </main>
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    // var img = document.getElementById("myImg");
+    var img = document.getElementsByClassName("galleryPic");
+    console.log(img.length)
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    function myPopup() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+      //alert('hey');
+    }
+    for (var i = 0; i < img.length; i++) {
+      img[i].onclick = myPopup;
+    }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("picClose")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  </script>
+  <!-- static js files always loaded -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- page specific vendor js files passed via vendorJS variable -->
+  <script src="js/displace.min.js"></script>
+  <!-- werkschau util -->
+  <script src="js/werkschau-util.js"></script>
+
+  <!-- index.js and autoloaded js determined by template name -->
+  <script src="js/index.js"></script>
+  <script src="js/panic.js"></script>
+  <!-- block js autoloaded by block detection -->
+  <script src="js/block-marquee.js"></script>
+
+  <!-- <script src="js/block-marquee.js"></script> -->
+</body>
+
+</html>

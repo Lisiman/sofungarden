@@ -1,0 +1,35 @@
+@font-face {
+   font-family: 'Werkschauzeiten Lang';
+   src: url('../Werkschauzeiten-Lang.eot');
+   src: url('../Werkschauzeiten-Lang.eot#iefix') format('embedded-opentype'),
+        url('../Werkschauzeiten-Lang.woff2') format('woff2'),
+        url('../fonts/Werkschauzeiten-Lang.woff') format('woff'),
+        url('../fonts/Werkschauzeiten-Lang.ttf') format('truetype'),
+        url('../img/Werkschauzeiten-Lang.svg#Werkschauzeiten-Lang') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Roc Grotesk';
+   src: url('../RocGrotesk-Regular.eot');
+   src: url('../RocGrotesk-Regular.eot#iefix') format('embedded-opentype'),
+        url('../RocGrotesk-Regular.woff2') format('woff2'),
+        url('../fonts/RocGrotesk-Regular.woff') format('woff'),
+        url('../fonts/RocGrotesk-Regular.ttf') format('truetype'),
+        url('../img/RocGrotesk-Regular.svg#RocGrotesk-Regular') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Roc Grotesk';
+   src: url('../RocGrotesk-Medium.eot');
+   src: url('../RocGrotesk-Medium.eot#iefix') format('embedded-opentype'),
+        url('../RocGrotesk-Medium.woff2') format('woff2'),
+        url('../fonts/RocGrotesk-Medium.woff') format('woff'),
+        url('../fonts/RocGrotesk-Medium.ttf') format('truetype'),
+        url('../img/RocGrotesk-Medium.svg#RocGrotesk-Medium') format('svg');
+   font-weight: 500;
+   font-style: normal;
+}

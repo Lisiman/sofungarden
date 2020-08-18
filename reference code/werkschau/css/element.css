@@ -1,0 +1,47 @@
+/**
+ * Loading Display
+ */
+.loading_display {}
+
+.loading_display--spinner {
+   width: 6rem;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 0.75rem;
+}
+
+.loading_display--spinner svg {
+   animation: spin 1.3s 0s var(--transition_easing) forwards infinite;
+}
+
+.loading_display--description {
+   font-family: var(--font_family--sans_serif);
+   font-size: var(--font_size--tiny);
+   text-align: center;
+}
+
+@keyframes spin {
+   0%   { transform: rotate(  0deg); }
+   70%  { transform: rotate(360deg); }
+   100% { transform: rotate(360deg); }
+}
+
+
+
+.block-timeschedule { margin-bottom: 2.5rem; }
+.block-timeschedule:last-of-type { margin-bottom: 0; }
+
+
+
+svg.icon { width: auto; height: 2rem; }
+
+
+
+button.icon_only {
+   background-color: transparent;
+   border: none;
+   transition: 0.1s var(--transition_easing);
+   cursor: pointer;
+}
+
+button.icon_only:hover { opacity: 0.7; }

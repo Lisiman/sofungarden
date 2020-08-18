@@ -1,0 +1,286 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Real Fun Garden 2020 +++">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="author" content="Code by Siman Li 2020">
+  <title> 🐲真趣园 ｜ Real Fun Garden</title>
+  <link href="css/index.css" rel="stylesheet">
+  <link href="css/panic.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0 0.714rem"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+
+  header {
+     font-family: var(--font_family--sans_serif);
+     font-size: var(--font_size--h6);
+     /* font-size: 20px; */
+     z-index: 100;
+  }
+
+  header #navigation--wrapper {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     /* margin-top: 20px; */
+  }
+
+  header #main_navigation a {
+     margin-right: var(--min_space);
+     margin-bottom: 1rem;
+  }
+
+  header #social_navigation a + a {
+     margin-left: 1rem;
+     margin-bottom: 1rem;
+  }
+
+
+    .info {
+      color: red;
+    }
+
+    :root {
+      --marquee--font_size: 1rem;
+      --marquee--line_height: 1.75;
+      --marquee--height: calc(var(--marquee--font_size) * var(--marquee--line_height));
+    }
+
+    .marquee--wrapper {
+      position: relative;
+      width: 100%;
+      min-height: var(--marquee--height);
+      height: var(--marquee--height);
+      font-family: var(--font_family--sans_serif);
+      font-size: var(--marquee--font_size);
+      line-height: var(--marquee--line_height);
+      color: #1700FF;
+      background-color: var(--ink);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.07), 0 0 4px rgba(0, 0, 0, 0.07), 0 0 8px rgba(0, 0, 0, 0.07), 0 0 16px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      z-index: 9980;
+    }
+
+    .marquee {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding-top: 0em;
+      margin-top: -0.1em;
+      padding-left: 0.25em;
+      white-space: nowrap;
+    }
+
+    .marquee--wrapper.fixed {
+      position: fixed;
+      left: 0;
+    }
+
+    .marquee--wrapper.fixed:first-of-type {
+      top: 0;
+      background-color: #9BFD8F;
+      border-bottom: 4px solid #1700FF;
+    }
+
+    .marquee--wrapper.fixed:last-of-type {
+      bottom: 0;
+      background-color: #9BFD8F;
+      border-top: 4px solid #1700FF;
+    }
+
+    .marquee--wrapper.fixed+header,
+    .marquee--wrapper.fixed+main {
+      margin-top: var(--marquee--height);
+    }
+
+    .marquee--wrapper.fixed~footer {
+      margin-bottom: var(--marquee--height);
+    }
+
+    body {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <aside class="marquee--wrapper fixed" id="topMar">
+    <div class="marquee">SO FUN GARDEN 真趣园 2020+++</div>
+  </aside>
+  <header class="off-page stack">
+    <div class="header--wrapper collapsed" aria-expanded="false">
+  <article id="navigation--wrapper">
+    <nav id="main_navigation">
+      <a href="https://www.nowness.cn/picks/so-fun-garden-miaojing" target="_blank">音乐短片</a>
+      <a href="gallery.html">真趣园画廊</a>
+      <a href="map.html">真趣园大观</a>
+    </nav>
+    <nav id="social_navigation">
+      <a href="https://www.instagram.com/hibanana_miao/" target="_blank" aria-label="Instagram">INS</a>
+      <a href="https://mp.weixin.qq.com/s/Y5ATR21Pr9e-PqzbLShVEg" target="_blank" aria-label="Facebook">WX</a>
+    </nav>
+  </article>
+</div>
+</header>
+<main class="stack">
+  <!-- common information -->
+  <section class="block-info">
+    <h1 class="sr_only">SO FUN GARDEN 2020</h1>
+<p> 真趣之大，不辨究竟。数据横流，信息爆炸，科技奇点，时空乱象。望不到尽头的疫情、嘈杂翻覆的世界、虚实编织的社会，我们生活的世界正因被多维度的拆解而陷入新的混沌。每一天，都仿佛站在历史的新结点上茫然四顾，又不断被新的浪潮席卷。人们试图在混乱的格局中理清思路，甚至企图获得新生的法门，抛出无数个问题，却像是在宇宙中投掷了一粒砂石，全无回应。寻求寄托与信仰，越显虚无缥缈，寻找“真实”而“有趣”的玩意儿，甚或更为“适合”当下社会。
+2019年初夏，视觉艺术家苗晶在纽约发起新媒体艺术企划项目《真趣园》，与在西雅图工作的艺术家/设计师易承桃，纽约音乐人W.Y.Huang、新媒体艺术家李思曼，洛杉矶新媒体组合严菁+陈梦豫，成都丝网工作室解忧堂Happy Town合作共同创作一个荒诞幻境又充满隐喻的虚拟廟宇。
+</p>
+  </section>
+
+  <article id="werk_chow_chow" class="draggable">
+    <img src="img/face_icon.svg" alt="face icon">
+  </article>
+
+  <!--heng 4 pop ups-->
+  <article class="device device--iphone draggable">
+    <img class="device--mockup" src="img/popUp4.svg"></img>
+    <div class="device--controls">
+      <button onclick="openNow()" class="device--controls--open icon_only" type="button"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 250 250">
+        <img src="img/open_button.svg" alt="open icon">
+      </button>
+      <button class="device--controls--close icon_only" type="button"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 250 250">
+        <img src="img/close_button.svg" alt="close icon">
+      </button>
+    </div>
+    <section class="device--screen bg--transparent">
+    <video poster="./assets/img/case-film_werkschau_webseite.jpg" onloadeddata="this.play();" playsinline loop muted>
+      <source src="./clips/clip4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- <section class="device--screen bg--skin_color_1"> -->
+      <!-- <p>So much fun?</p> -->
+    </section>
+  </article>
+
+
+  <!--shu 3 pop ups-->
+  <article class="device device--apple_watch draggable">
+    <img class="device--mockup" src="img/popUp3.svg"></img>
+    <div class="device--controls">
+      <button onclick="openNow()" class="device--controls--open icon_only" type="button" aria-label="Fenster schließen"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 250 250">
+        <img src="img/open_button.svg" alt="open icon">
+      </button>
+      <button class="device--controls--close icon_only" type="button" aria-label="Fenster schließen"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 250 250">
+        <img src="img/close_button.svg" alt="close icon">
+      </button>
+    </div>
+    <section class="device--screen bg--transparent">
+    <video poster="./assets/img/case-film_werkschau_webseite.jpg" onloadeddata="this.play();" playsinline loop muted>
+      <source src="./clips/clip3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- <section class="device--screen bg--skin_color_1"> -->
+      <!-- <p>So much fun?</p> -->
+    </section>
+  </article>
+
+
+  <!--heng 2 pop ups-->
+  <article class="device device--iphone draggable">
+    <img class="device--mockup" src="img/popUp2_v.svg"></img>
+    <div class="device--controls">
+      <button onclick="openNow()" class="device--controls--open icon_only" type="button" aria-label="Fenster schließen"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 250 250">
+        <img src="img/open_button.svg" alt="open icon">
+      </button>
+      <button class="device--controls--close icon_only" type="button" aria-label="Fenster schließen"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 250 250">
+        <img src="img/close_button.svg" alt="close icon">
+      </button>
+    </div>
+    <section class="device--screen bg--transparent">
+    <video poster="./assets/img/case-film_werkschau_webseite.jpg" onloadeddata="this.play();" playsinline loop muted>
+      <source src="./clips/clip2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- <section class="device--screen bg--skin_color_1"> -->
+      <!-- <p>So much fun?</p> -->
+    </section>
+  </article>
+
+  <!--shu 1 pop ups-->
+  <article class="device device--ipad draggable">
+    <img class="device--mockup" src="img/popUp1.svg"></img>
+    <div class="device--controls">
+      <button onclick="openNow()" class="device--controls--open icon_only" type="button" aria-label="Fenster schließen"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 250 250">
+        <img src="img/open_button.svg" alt="open icon">
+      </button>
+      <button class="device--controls--close icon_only" type="button" aria-label="Fenster schließen"><svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 250 250">
+        <img src="img/close_button.svg" alt="close icon">
+      </button>
+    </div>
+    <section class="device--screen bg--transparent">
+    <video poster="./assets/img/case-film_werkschau_webseite.jpg" onloadeddata="this.play();" playsinline loop muted>
+      <source src="./clips/clip1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- <section class="device--screen bg--skin_color_1"> -->
+      <!-- <p>So much fun?</p> -->
+    </section>
+  </article>
+
+
+
+
+</main>
+
+
+  <footer class="stack">
+    <article class="flex_row">
+      <section>
+          <a href="https://www.siman.studio">李思曼</a>
+          <a href="https://www.siman.studio">SIMAN LI</a>
+          <p>&copy; 2020<br>
+        </p>
+      </section>
+
+      <section id="approach">
+          <a href="http://hibanana.work/artwork/">MIAO JING</a>
+          <a href="https://soundcloud.com/wyhuangofficial">W.Y.HUANG</a>
+          <a href="https://www.behance.net/YiDesign">CHENGTAO YI</a>
+      </section>
+
+      <nav>
+        <a href="https://www.nowness.cn/picks/so-fun-garden-miaojing?from=singlemessage">HAPPY TOWN</a>
+        <a href="https://www.theuniqueeye.com/studio">JING YAN + MENGYU CHEN</a>
+        <a>YIWEI LIU</a>
+      </nav>
+    </article>
+</footer>
+<aside class="marquee--wrapper fixed" id="botMar">
+  <div class="marquee">SO FUN GARDEN 真趣园 2020+++</div>
+</aside>
+<script nonce="zoT1cpzZSPrcx4YTp2eYiIVzR+c=">
+  window.werkschau = {
+    "baseUrl": "https://www.sofungarden.com"
+  }
+</script>
+<script>
+function openNow() {
+  window.open("https://www.nowness.cn/picks/so-fun-garden-miaojing");
+}
+</script>
+
+<!-- static js files always loaded -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<!-- page specific vendor js files passed via vendorJS variable -->
+<script src="js/displace.min.js"></script>
+<!-- werkschau util -->
+<script src="js/werkschau-util.js"></script>
+
+<!-- index.js and autoloaded js determined by template name -->
+<script src="js/index.js"></script>
+<script src="js/panic.js"></script>
+<!-- block js autoloaded by block detection -->
+<script src="js/block-marquee.js"></script>
+
+<!-- <script src="js/block-marquee.js"></script> -->
+</body>
+</html>

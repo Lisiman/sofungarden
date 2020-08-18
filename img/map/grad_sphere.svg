@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="113px" height="113px" viewBox="0 0 113 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Stroke 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="100%" id="radialGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#009992" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="black-copy-10" transform="translate(-729.000000, -904.000000)" fill="url(#radialGradient-1)">
+            <path d="M842,960.498793 C842,991.702249 816.704122,1017 785.5,1017 C754.295878,1017 729,991.702249 729,960.498793 C729,929.295338 754.295878,904 785.5,904 C816.704122,904 842,929.295338 842,960.498793 Z" id="Stroke-3"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,25 @@
+ :root {
+   --black: #010101;
+   --white: #FFFFFF;
+
+   --skin_color_1: #933C21;
+   --skin_color_2: #EBBBA4;
+   --skin_color_3: #F0D2B4;
+   --skin_color_4: #F2E6D0;
+   --skin_color_5: #FFB7BC;
+
+   --pastel_blue: #BCB6C4;
+   --pastel_green: #D9CC8F;
+   --pastel_brown: #8C7446;
+   --pastel_skincolor: #F2E6D1;
+   --pastel_red: #8C5858;
+
+   --neon_green: #00FF00;
+   --neon_yellow: #FFFF00;
+   --neon_blue: #0000FF;
+   --neon_pink: #FF00FF;
+   --neon_brown: #92871C;
+
+   --ink: var(--black);
+   --paper: var(--white);
+}

@@ -1,0 +1,25 @@
+:root {
+   --font_family--sans_serif: 'Roc Grotesk';
+   --font_family--serif: 'Werkschauzeiten Lang', 'Times', 'Times New Romain', serif;
+   --font_size--h1: 3.5rem;
+   --font_size--h2: 2.333rem;
+   --font_size--h3: 1.554rem;
+   --font_size--h4: 1.4rem;
+   --font_size--h5: 1.2rem;
+   --font_size--h6: 1.08rem;
+   --font_size--small: 0.94rem;
+   --font_size--tiny: 0.8rem;
+   --font_weight--normal: 400;
+   --font_weight--medium: 500;
+
+   --transition_easing: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+   --min_space: 2rem;
+}
+
+@media (max-width: 450px) {
+   :root {
+       --min_space: 1rem;
+       --font_size--h1: 2.666rem;
+   }
+}

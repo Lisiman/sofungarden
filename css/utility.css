@@ -1,0 +1,220 @@
+/*
+ * CONTENTS
+ * ------------------------------------
+ * 1. Color
+ * 2. Font
+ * 3. Flexbox
+ * 4. Spacing for the content
+ * 5.
+ */
+
+
+
+/**
+ * 1. Color utility classes
+ */
+.bg--skin_color_1 { background-color: var(--skin_color_1); }
+.bg--skin_color_5 { background-color: var(--skin_color_5); }
+.bg--neon_brown   { background-color: var(--neon_brown); }
+.bg--nearly_black { background-color: #111; }
+.bg--pastel_green { background-color: var(--pastel_green); }
+.bg--pastel_blue  { background-color: var(--pastel_blue); }
+.bg--transparent  { background-color: transparent; }
+
+.inverted_color_scheme {
+   --ink: var(--black);
+   --paper: var(--white);
+   background-color: var(--paper);
+   color: var(--ink);
+}
+
+
+
+/**
+ * 2. Font utility classes
+ */
+.font_family--sans_serif { font-family: var(--font_family--sans_serif); }
+.font_family--serif { font-family: var(--font_family--serif); }
+.font_weight--normal { font-weight: var(--font_weight--normal); }
+.font_weight--medium { font-weight: var(--font_weight--medium); }
+
+
+
+/**
+ * 3. Flexbox utility classes
+ */
+
+/* Flexible row layout */
+.flex_row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  --margin: 0px;
+}
+
+.flex_row > * {
+   --padding: 0px;
+   --border_width: 0px;
+   flex-basis: 100%;
+}
+
+.flex_row img { min-width: 0; } /* Prevents images from overflowing */
+
+
+@media (min-width: 35em) and (max-width: 56em) {
+
+   /* Flexible row layout */
+  .flex_row > * {
+    flex-basis: calc(50% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2));
+  }
+  .flex_row > .col_span_2,
+  .flex_row > .col_span_all { flex-basis: 100%; }
+}
+
+
+@media (min-width: 56em) and (max-width: 65em) {
+
+   /* Flexible row layout */
+  .flex_row > * {
+    flex-basis: calc(33.333% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2));
+  }
+
+  .flex_row > .col_span_2 {
+    flex-basis: calc(66.666% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2));
+  }
+
+  .flex_row > .col_span_3,
+  .flex_row > .col_span_all { flex-basis: 100%; }
+
+  /* Flexible 2 column layout */
+  .flex_row.col_2 > * { flex-basis: calc(50% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2)); }
+  .flex_row.col_2 > .col_span_2,
+  .flex_row.col_2 > .col_span_all { flex-basis: 100%; }
+}
+
+
+@media (min-width: 65em) {
+
+   /* Flexible row layout */
+  .flex_row > * {
+    flex-basis: calc(25% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2));
+  }
+
+  .flex_row > .col_span_2 {
+    flex-basis: calc(50% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2));
+  }
+
+  .flex_row > .col_span_3 {
+    flex-basis: calc(75% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2));
+  }
+
+  .flex_row > .col_span_4,
+  .flex_row > .col_span_all { flex-basis: 100%; }
+
+  /* Flexible 3 column layout */
+  .flex_row.col_3 > * {
+     flex-basis: calc(33.333% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2));
+  }
+
+  .flex_row.col_3 > .col_span_2 {
+     flex-basis: calc(66.666% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2));
+  }
+
+  .flex_row.col_3 > .col_span_3,
+  .flex_row.col_3 > .col_span_all { flex-basis: 100%; }
+
+  /* Flexible 2 column layout */
+  .flex_row.col_2 > * { flex-basis: calc(50% - (var(--margin) * 2) - (var(--padding) * 2) - (var(--border_width) * 2)); }
+  .flex_row.col_2 > .col_span_2,
+  .flex_row.col_2 > .col_span_all { flex-basis: 100%; }
+}
+
+
+
+/**
+ * 4. Spacing for the content
+ */
+.stack {
+   padding-top: 0.1px; /* to make own margin apply on top of children margin */
+   padding-bottom: 0.1px;
+}
+
+.stack > * { margin: var(--min_space); }
+.stack > * + * { margin-bottom: 0; }
+.stack > h2 { margin-top: 1.5em; }
+
+/* Spacing for flex-layouts */
+/* Maintain equal margin between all children and the parents borders */
+.stack .flex_row {
+   --margin: calc(var(--min_space) / 2);
+   width: calc(100% - (var(--margin) * 2));
+   margin: var(--margin);
+}
+
+.stack .flex_row > * {
+  margin: var(--margin);
+  padding: var(--padding);
+  border: var(--border_width) solid;
+}
+
+/* Smaller margin between flex_row children */
+.stack .flex_row.margin--small { --margin: calc(var(--min_space) * 0.75); }
+.stack .flex_row.margin--small > * { --margin: calc(var(--min_space) / 4); }
+
+
+
+/**
+ * 5. Mini utility classes
+ * ------------------------------------
+ * 5.1 Screen-Reader only
+ * 5.2 Not selectable
+ * 5.3 Anchor
+ */
+
+/**
+ * 5.1 Screen-Reader only
+ * ------------------------------------
+ * Elements with this class won't be visible to "normal" users, but they'll be
+ * read out by screen readers.
+ */
+.sr_only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0, 0, 0, 0);
+   white-space: nowrap; /* added line */
+   border: 0;
+}
+
+
+
+/**
+ * 5.2 Not selectable: Prevents selecting
+ */
+.draggable, /* Make draggable elements not selectable */
+.not_selectable {
+   -webkit-touch-callout: none; /* iOS Safari */
+     -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+         -ms-user-select: none; /* Internet Explorer/Edge */
+             user-select: none; /* Non-prefixed version, currently
+                                   supported by Chrome and Opera */
+}
+
+
+
+/**
+ * 5.3 Anchor: For anchor scrolling with fixed elements (i. e. navbar)
+ */
+.anchor {
+    display: block;
+    position: relative;
+    top: -1rem;
+    visibility: hidden;
+}

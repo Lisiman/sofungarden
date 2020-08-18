@@ -1,0 +1,481 @@
+/*
+ * CONTENTS
+ * ------------------------------------
+ * 1. HEADER
+ * 2. .device
+ * 3. #search.device
+ * 4. .custom-block: Sponsoring
+ * 5. (loading-) .spinner
+ * 6. FOOTER
+ */
+
+
+
+/**
+ * 1. HEADER
+ * ------------------------------------
+ * 1.1 Cascade
+ * 1.2 Block
+ * 1.3 Off-page version
+ * 1.4 On-page version
+ * 1.5 Minimal-back version and minimal-home version
+ * 1.6 Student version
+ */
+
+/* 1.1 Cascade */
+header {
+   font-family: var(--font_family--sans_serif);
+   font-size: var(--font_size--h6);
+   z-index: 100;
+}
+
+header a {
+   display: inline-block;
+   text-decoration: none;
+   color: inherit;
+}
+
+
+
+/* 1.2 Block */
+header #search_bar {
+   margin-bottom: 0;
+   text-align: right;
+}
+
+#search_link{
+   margin-right: -0.4em; /* to compensate the svgs empty space on that side */
+}
+
+#search_link svg {
+   width: 2rem;
+   transform: scale(0.9);
+}
+
+#search_link svg .handle {
+   transition: 0.075s var(--transition_easing);
+   /* visible handle */
+   /* transform: matrix(0.7071, -0.7071, 0.7071, 0.7071, -133.3699, 91.2619); */
+   /* invisible handle */
+   /* transform: matrix(0.7071, -0.7071, 0.7071, 0.7071, -71, 29); */
+}
+
+header #navigation--wrapper {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 0;
+}
+
+header #main_navigation a {
+   margin-right: var(--min_space);
+   margin-bottom: 1rem;
+}
+
+header #social_navigation a + a {
+   margin-left: 1rem;
+   margin-bottom: 1rem;
+}
+
+
+
+/* 1.3 Header-Version 'off-page' */
+header.off-page .mobile_menu--toggle--wrapper { display: none; }
+
+
+
+/* 1.4 Header-Version 'on-page' */
+header.on-page {
+   position: -webkit-sticky;
+   position: sticky;
+   top: calc(-1 * (var(--min_space) + 2rem)); /* margin-top + #search_bar height */
+}
+
+header.on-page .mobile_menu--toggle--wrapper { display: none; }
+
+@media (max-width: 40em) {
+
+    header.on-page { top: 0; }
+
+    header.on-page .mobile_menu--toggle--wrapper {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: var(--min_space);
+        background-color: var(--paper);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        z-index: 2;
+    }
+
+    header.on-page .header--wrapper {
+        position: absolute;
+        background-color: var(--paper);
+        margin-top: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        transform: translateY(0);
+        transition: 0.15s var(--transition_easing);
+        z-index: 1;
+    }
+
+    header.on-page .header--wrapper.collapsed {
+        transform: translateY(-100%);
+        pointer-events: none;
+    }
+
+    header.on-page #mobile_menu--toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+}
+
+
+
+/* 1.5 Header-Version 'minimal-back' and 'minimal-home' */
+a.close, /* (X)-Button */
+a.home_link { float: right; clear: both; }
+
+a.close svg,
+a.home_link svg {
+   height: 4rem;
+   margin-top: 0.5rem;
+}
+
+
+
+/* 1.6 Header-Version 'student' */
+header.student {
+   --control_height: 4rem;
+
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-items: flex-start;
+   position: -webkit-sticky;
+   position: sticky;
+   top: -1px;
+   /* Preserve the header height to prevent flickering on stuck treshold */
+   height: calc(var(--control_height) + var(--min_space));
+   pointer-events: none;
+}
+
+header.student .control--previous,
+header.student .control--next,
+header.student .control--back {
+   display: inline-block;
+   margin-bottom: 1rem;
+   pointer-events: auto;
+}
+
+header.student .control--previous.disabled,
+header.student .control--next.disabled { opacity: 0.3; }
+
+header.student .control--previous svg,
+header.student .control--next svg,
+header.student .control--back svg {
+   width: auto;
+   height: var(--control_height);
+   transition: 0.1s var(--transition_easing);
+}
+
+/* If the header is sticking to the viewport */
+header.student.is-stuck .control--previous svg,
+header.student.is-stuck .control--next svg,
+header.student.is-stuck .control--back svg { height: 1.5rem; }
+
+@media (max-width: 30em) {
+    header.student { --control_height: 3rem; }
+}
+
+
+
+/**
+ * 2. .device styling
+ */
+.device {
+   position: relative;
+   width: 100%;
+   z-index: 1; /* To prevent links etc. moving in front of them on hover */
+   filter: drop-shadow(0 0 16px rgba(0,0,0,0.4));
+}
+
+.device--ipad { max-width: 65vmin;}
+.device--iphone { max-width: 55vmin;}
+.device--apple_watch { max-width: 35vmin;}
+
+.device--iphone--landscape {
+   transform: matrix(0, -1, 1, 0, 0, 0);
+   max-width: 40vmin;
+}
+
+.device--mockup {
+   position: relative;
+   pointer-events: none; /* prevents image dragging */
+   z-index: 1;
+}
+
+.device--screen {
+   position: absolute;
+   padding: calc(var(--min_space) / 2);
+   overflow: scroll;
+   scrollbar-width: none; /* Make scrollbars invisible in firefox */
+}
+
+/* Make scrollbars invisible in chrome */
+.device--screen::-webkit-scrollbar { display: none; }
+
+
+.device--ipad .device--screen {
+   top: 8.7%;
+   right: 6.0%;
+   bottom: 8.5%;
+   left: 5.9%;
+   padding-top: calc(2.6% + (var(--min_space) / 2)); /* 2.6% extra because of
+                                                        the info on the screen */
+}
+
+.device--iphone .device--screen,
+.device--iphone--landscape .device--screen {
+   top: 2.8%;
+   right: 6.25%;
+   bottom: 2.85%;
+   left: 6.3%;
+   padding-top: calc(7.1% + (var(--min_space) / 2)); /* 7.1% extra because of the
+                                                      notch */
+}
+
+.device--apple_watch .device--screen {
+   top: 13.4%;
+   right: 19.3%;
+   bottom: 13.0%;
+   left: 14.3%;
+   padding: calc(var(--min_space) / 4);
+}
+
+.device--screen p {
+   font-family: var(--font_family--sans_serif);
+   font-size: 7.1vmin; /* vmin to adjust the font-size to the device width */
+}
+
+.device--screen VIDEO {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: auto;
+   height: 100%;
+   transform: translate(-50%, -50%);
+   z-index: -1;
+}
+
+.device--controls {
+   text-align: right;
+   margin-bottom: var(--min_space);
+}
+
+.device--controls--close,
+.device--controls--open { display: inline-block; }
+
+.device--controls--open { margin-left: calc(var(--min_space) / 6); }
+
+.device--controls--open .arrow_top_right { transform: scale(0.96); }
+
+.device--controls--sound.muted .soundwave--small,
+.device--controls--sound.muted .soundwave--big { display: none; }
+
+.device--iphone--landscape .device--controls {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   margin-right: calc(var(--min_space) / 3);
+   margin-bottom: calc(var(--min_space) * 0.5);
+}
+
+.device--iphone--landscape .device--controls > * { display: block; }
+
+.device--iphone--landscape .device--controls--sound {
+    margin-top: calc(var(--min_space) / 3);
+}
+
+.device--iphone--landscape .device--controls--sound svg {
+    width: 2rem;
+    height: auto;
+    overflow: visible;
+}
+
+.device--apple_watch .device--controls {
+   float: right;
+   margin-bottom: calc(var(--min_space) / 2);
+}
+
+.device--apple_watch #countdown { line-height: 0.95; }
+
+
+
+/**
+ * 3. #search.device
+ */
+#search.device {
+   right: 0;
+   font-family: var(--font_family--serif);
+}
+
+#search .device--controls--search_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#search .device--controls--search_input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+}
+
+#search #search--results {
+    text-align: left;
+    background-color: var(--paper);
+    margin-top: 0.5rem;
+}
+
+#search .search--result { display: block; }
+
+#search .search--result--type {
+    font-size: var(--font_size--tiny);
+    opacity: 0.7;
+}
+
+#search .search--result--title {
+    font-family: var(--font_family--sans_serif);
+}
+
+#search .search_tags { margin-bottom: var(--min_space); }
+
+#search .search_tag {
+    font-size: 4vmin;
+    margin-right: 0.3rem;
+}
+
+#search .search_tag.--active { color: var(--neon_blue); }
+
+/* Bigger version for small screens */
+@media (max-width: 35em) {
+    #search.device { max-width: 85vw; }
+
+    #search .search_tag {
+        font-size: var(--font_size--h5);
+        line-height: 1.5;
+    }
+}
+
+
+
+/**
+ * 4. .custom-block: Sponsoring
+ */
+.sponsoring h3 {
+   font-size: var(--font_size--h5);
+   margin-bottom: 0;
+}
+
+.sponsoring svg {
+   max-width: 18rem;
+   margin: 0.75rem 0;
+}
+
+
+
+/**
+ * 5. (loading-) .spinner
+ * ------------------------------------
+ * Credits to https://tobiasahlin.com/spinkit/
+ */
+.spinner-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: auto auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(243, 238, 231, 0.58);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+}
+
+
+
+/**
+ * 6. FOOTER
+ */
+footer {
+   font-family: var(--font_family--sans_serif);
+   font-size: var(--font_size--tiny);
+   line-height: 0.94rem;
+   font-weight: var(--font_weight--normal);
+}
+
+   footer .flex_row {
+      align-items: center;
+      margin-top: calc(var(--min_space) * 2) !important;
+   }
+
+      footer .hs_augsburg_logo {
+         width: auto;
+         height: 100%;
+         max-height: 5em;
+         margin-top: 0.15em;
+      }
+
+      footer a { display: block; }
+
+@media (min-width: 56em) and (max-width: 65em) {
+   /**
+    * Hide the #approach section if the flex_row provides 3 columns to prevent
+    * the footer from taking up too much space.
+    */
+   footer #approach { display: none; }
+}
