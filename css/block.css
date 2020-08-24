@@ -222,7 +222,8 @@ header.student.is-stuck .control--back svg {
 
 .device--mockup {
   position: relative;
-  margin-top: 40px;
+  /* margin-top: 40px; */
+  /* I comment the last  */
   pointer-events: none;
   /* prevents image dragging */
   z-index: -2;
@@ -242,18 +243,22 @@ header.student.is-stuck .control--back svg {
 }
 
 .device--ipad .device--screen {
-  /* top: 8.7%; */
-  /* top: 10%;
-  right: 1.0%;
-  bottom: 8.5%;
-  left: 5.9%; */
-
-  top: 9%;
+  /* top: 9%;
   right: 0.8%;
   left: 0.8%;
-  bottom: 0.4%;
+  bottom: 0.4%; */
+
+  /* top: 60px;
+  right: 0;
+  left: 0;
+  bottom: 0; */
+
+  top: 8.7%;
+  right: 6.0%;
+  bottom: 8.5%;
+  left: 5.9%;
   /* padding-top: calc(2.6% + (var(--min_space) / 2)); /* 2.6% extra because of */
-  the info on the screen */
+                                                       /* the info on the screen */ */
 }
 
 .device--iphone .device--screen,
@@ -297,10 +302,11 @@ header.student.is-stuck .control--back svg {
 .device--controls {
   text-align: right;
   position: absolute;
-  top: 0.5%;
-  right: 1.2%;
-
+  top: -35px;
+  right: 2.2%;
   z-index: 10;
+  /* margin-right: calc(var(--min_space) / 3); */
+
 }
 
 .device--controls--close,
@@ -334,9 +340,9 @@ header.student.is-stuck .control--back svg {
   display: block;
 }
 
-.device--iphone--landscape .device--controls--sound {
+/* .device--iphone--landscape .device--controls--sound {
   margin-top: calc(var(--min_space) / 3);
-}
+} */
 
 .device--iphone--landscape .device--controls--sound svg {
   width: 2rem;
