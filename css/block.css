@@ -19,6 +19,15 @@
  * 1.6 Student version
  */
 /* 1.1 Cascade */
+/* hide stuff on mobile */
+.mobileHide { display: inline; }
+
+/* Smartphone Portrait and Landscape */
+@media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px){
+   .mobileHide { display: none;}
+}
 header {
   font-family: var(--font_family--sans_serif);
   font-size: var(--font_size--h6);
@@ -312,7 +321,10 @@ header.student.is-stuck .control--back svg {
 .device--controls--close,
 .device--controls--open {
   display: inline;
-  width: 22px;
+  /* width: 22px; */
+  width: 20%;
+  height: auto;
+
 }
 
 .device--controls--open {
